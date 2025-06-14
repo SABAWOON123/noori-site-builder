@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ویرایشگر قالب</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="editorModal" class="modal" style="display:none; position:fixed;z-index:10000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);justify-content:center;align-items:center;">
+  <div class="modal-content" style="background:#fff;max-width:350px;margin:150px auto;padding:24px 16px;border-radius:16px;text-align:right;position:relative;">
+    <form id="editForm">
+      <label id="editLabel" style="display:block;margin-bottom:8px;"></label>
+      <input type="text" id="editInput" style="width:100%;margin-bottom:16px;padding:8px;border-radius:8px;border:1px solid #bbb;" required>
+      <div class="modal-actions" style="text-align:left;">
+        <button type="submit" style="padding:7px 24px;border-radius:8px;background:#1a237e;color:#fff;border:none;">ذخیره</button>
+        <button type="button" id="cancelEdit" style="padding:7px 24px;border-radius:8px;background:#eee;color:#111;border:none;margin-right:8px;">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>
+  <header class="header">
+    <a href="gallery.html" class="back-link">بازگشت به گالری</a>
+    <h2>ویرایش قالب</h2>
+  </header>
+  <main>
+    <section class="editor-container">
+      <div id="template-area"></div>
+      <div class="editor-actions">
+        <button id="saveBtn" class="main-btn">ذخیره تغییرات</button>
+        <a href="gallery.html" class="main-btn secondary">بازگشت</a>
+      </div>
+    </section>
+    <!-- پنجره ویرایش -->
+    <div id="editorModal" class="modal">
+      <div class="modal-content">
+        <form id="editForm">
+          <label id="editLabel"></label>
+          <input type="text" id="editInput" required>
+          <div class="modal-actions">
+            <button type="submit" class="main-btn">ذخیره</button>
+            <button type="button" id="cancelEdit" class="main-btn secondary">انصراف</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- پنجره ویرایش تصویر -->
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <form id="imageForm">
+          <label>آدرس تصویر جدید:</label>
+          <input type="text" id="imageInput" placeholder="http://..." required>
+          <div class="modal-actions">
+            <button type="submit" class="main-btn">ذخیره</button>
+            <button type="button" id="cancelImageEdit" class="main-btn secondary">انصراف</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="editor.js"></script>
+</body>
+</html>
